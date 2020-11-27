@@ -1,0 +1,92 @@
+<!--pages/post/post-comment/post-comment.wxml-->
+<view class="container">
+  <!--评论区域-->
+  <view class="comment-box">
+    <!--评论统计-->
+    <view class="comment-count">评论........（共{{comments.length}}条）</view>
+    <!--评论内容-->
+    <block wx:for="{{comments}}" wx:for-item="item">
+      <view class="comment-item">
+        <!--评论项上（头像、作者）-->
+        <view class="comment-item-header">
+          <image src="{{item.avatar}}"></image>
+          <text>{{item.username}}</text>
+        </view>
+        <!--评论项中（文字、图片、语音）-->
+        <view class="comment-item-body">
+          <view class="comment-txt" wx:if="{{item.content.txt}}">
+            {{item.content.txt}}
+          </view>
+          <view class="comment-img" wx:if="{{item.content.img.length!=0}}">
+            <block wx:for="{{item.content.img}}" wx:for-item="itemImg">
+              <image src="{{itemImg}}"></image>
+            </block>
+          </view>
+          <view wx:if="{{item.content.audio!=null}}">
+            <view class="comment-voice" data-url="{{item.content.audio.url}}" catchtap="palyVoice">
+              <image src="/images/icon/wx_app_voice.png"></image>
+              <text>{{item.content.audio.timeLen}}''</text>
+            </view>
+          </view>
+        </view>
+        <!--评论项底部（评论时间）-->
+        <view class="comment-item-footer">
+          {{item.create_time}}
+        </view>
+      </view>
+    </block>
+  </view>
+  <!--操作区域-->
+  <view class="input-box">
+    <!--2.1发送评论-->
+      <view class="send-comment">
+        <!--2.1.1 发送输入项(文字)-->
+          <view class="input-item" hidden="{{!userKeyBoardFlag}}">
+            <image src="/images/icon/wx_app_speak.png" catchtap="switchInputType"></image>
+            <input type="text" placeholder="say something" bindblur="CommetInput"
+            value="{{KeyBoardInputValue}}"/>
+          </view>
+        <!--2.1.1发送输入项（语音）-->
+          <view class="input-item" hidden="{{userKeyBoardFlag}}">
+            <image src="/images/icon/wx_app_keyboard.png" catchtap="switchInputType"></image>
+            <input type="text" class="speak-input {{recordFlag}}" placeholder="按住 说话" disabled="disabled"
+            catch:touchstart="recordStart" catch:touchend="recordEnd"/>
+          </view>
+        <!--2.1.2加好按钮-->
+        <image src="/images/icon/wx_app_add.png" catchtap="sendMoreMsg"></image>
+        <!--2.1.3发送按钮-->
+        <view class="submit-btn" catchtap="sendComment">发送</view>
+      </view>
+    <!--2.2选择照片和拍照区域-->
+    <view class="send-more" hidden="{{!sendMoreMsgFlag}}">
+      <!--照片和拍照的按钮区域-->
+      <view class="send-more-btns">
+        <!--照片按钮-->
+        <view class="btn-item">
+          <view class="btn-item-box" catchtap="chooseImage" data-category="album">
+            <image src="/images/icon/wx_app_upload_image.png"></image>
+          </view>
+          <text>照片</text>
+        </view>
+        <!--拍照按钮-->
+        <view class="btn-item">
+          <view class="btn-item-box" catchtap="chooseImage" data-category="camera">
+            <image src="/images/icon/wx_app_camera.png"></image>
+          </view>
+          <text>拍照</text>
+        </view>
+      </view>
+      <!--照片的显示列表区域-->
+      <view class="send-more-imgs" hidden="{{chooseFiles.length==0}}">
+        <block wx:for="{{chooseFiles}}">
+          <view class="img-box">
+            <image src="{{item}}"></image>
+            <icon type="cancel" size="23" color="#fbfbfb" catchtap="removeImage"
+              data-index="{{index}}"></icon>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,71 @@
+<view class="container">
+
+   <view class='page_row' bindtap="suo">
+     <view class="search">
+       <view class="df search_arr">
+         <icon class="searchcion" size='20' type='search'></icon>
+         <input class="" disabled placeholder="" value="{{searchValue}}"/>
+       </view>
+     </view>
+     <view class="sousuo">搜索</view>
+   </view>
+     
+   <view class="post">
+            <view class="item-box" catchtap="openWeb" >
+               <view class="riman">
+                  <image class="tupian1" src="/images/comment/1.PNG" data-url="https://v.qq.com/x/page/g0035ctpfir.html"></image>
+                  <view class="riman-text">
+                  
+                  
+                  <text>2018-07-10</text>
+                  <text>\n</text>
+                  <text>NBA驱逐出场时刻 大帝唐斯激情抱摔巴特勒飞吻嘲讽沃伦离场</text>
+                  </view>
+               </view>
+            </view>
+            <view class="item-box" catchtap="openWeb" data-url="https://v.qq.com/x/cover/mzc00200lmpk974/t00352e3ajj.html">
+               <view class="riman">
+                  <image class="tupian" src="/images/comment/2.png" ></image>
+                  <view class="riman-text">
+            
+                  
+                  <text>2019-04-07</text>
+                  <text>\n</text>
+                  <text>官宣！ 太阳制作短视频欢迎保罗加盟：新的太阳之子 </text>
+                  <text>\n</text>
+               
+                  </view>
+               </view>
+            </view>
+            <view class="item-box" catchtap="openWeb" data-url="https://v.qq.com/x/cover/mzc00200lmpk974/c0035na8wvf.html">
+               <view class="riman">
+                  <image class="tupian" src="/images/comment/3.png" ></image>
+                  <view class="riman-text">
+               
+
+                  <text>2018-10-06</text>
+                  <text>\n</text>
+                  <text>鹈鹕将霍勒迪交易到雄鹿 换来希尔+血布+3个首轮签 </text>
+
+                  </view>
+               </view>
+            </view>
+            <view class="item-box" catchtap="openWeb" data-url="https://v.qq.com/x/page/t0035qqh4aj.html">
+               <view class="riman">
+                  <image class="tupian" src="/images/comment/4.PNG" ></image>
+                  <view class="riman-text">
+                  
+
+                  <text>2016-01-14</text>
+                  <text>\n</text>
+                  <text>火箭将考文顿送到开拓者 换回阿里扎和两个首轮签</text>
+
+                  </view>
+               </view>
+            </view>
+      </view> 
+      <view class="item-box" catchtap="openWeb" data-url="">
+            <view class="login-out" catchtap="openWeb" data-url="https://sports.qq.com/">更多>>>
+            </view>
+      </view>
+</view>

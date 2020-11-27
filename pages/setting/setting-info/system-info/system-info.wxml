@@ -1,0 +1,46 @@
+<!--pages/setting/setting.wxml-->
+<view class="container">
+
+  <!--手机信息区域-->
+  <view class="item-box">
+  <block wx:for="{{phoneInfo}}">
+    <view class="detail-item" >
+      <view class="datail-item-left">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="datail-item-right">
+        <text>{{item.value}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+  <!--软件信息区域-->
+  <view class="item-box">
+  <block wx:for="{{softInfo}}">
+    <view class="detail-item" >
+      <view class="datail-item-left">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="datail-item-right">
+        <text>{{item.value}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+  <!--屏幕信息区域-->
+  <view class="item-box">
+  <block wx:for="{{screenInfo}}">
+    <view class="detail-item" >
+      <view class="datail-item-left">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="datail-item-right">
+        <text>{{item.value}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+
+  </view>
+
+

@@ -1,0 +1,10 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <image class="logo" src="/images/avatar/sy.png"></image>
+  <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  <text class="hello">Hello明日之星：{{userInfo.nickName}}</text>
+  <view class="button-container" catchtap="onTapStart">
+    <text class="button-text">NBA</text>
+  </view>
+<button open-type="getUserInfo" >授权登录</button>
+</view>

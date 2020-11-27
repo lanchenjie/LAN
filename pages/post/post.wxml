@@ -1,0 +1,44 @@
+<!--pages/post/post.wxml-->
+<view class="container">
+
+
+  <!--轮播-->
+  <swiper autoplay="true" interval="3000" circular="true" indicator-dots="true">
+    <swiper-item>
+      <image src="/images/post/lunbo1.jpg" catchtap="openWeb" data-url="https://sports.qq.com/nba/"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/post/lunbo2.jpg" catchtap="openWeb" data-url="https://sports.qq.com/nba/"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/post/lunbo3.jpg" catchtap="openWeb" data-url="https://sports.qq.com/nba/"></image>
+    </swiper-item>
+
+  </swiper>
+
+
+  <!--文章列表-->
+  <block  wx:for="{{postList}}" wx:for-item="post_data" >
+    <view class="post-container" catchtap="onTapToDetail" data-id="{{post_data.postId}}">
+      <view class="post-author-date">
+        <image src="{{post_data.avatar}}"></image>
+        <text>{{post_data.date}}</text>
+      </view>
+
+    
+        <text class="post-title">{{title}}</text>
+        <image class="post-image" mode="aspectFill" src="{{post_data.postImg}}"></image>
+        <text class="post-content">{{post_data.content}}</text>
+    
+
+      <view class="post-tool">
+        <image src="/images/icon/wx_app_collect.png"></image>
+        <text>{{post_data.collectionNum}}</text>
+        <image src="/images/icon/wx_app_view.png"></image>
+        <text>{{post_data.readingNum}}</text>
+        <image src="/images/icon/wx_app_message.png"></image>
+        <text>{{post_data.commentNum}}</text>
+      </view>
+    </view>
+  </block>
+</view>

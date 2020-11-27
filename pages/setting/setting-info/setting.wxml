@@ -1,0 +1,46 @@
+<!--pages/setting/setting.wxml-->
+<view class="container">
+  <!--登录用户的信息区域-->
+  <view class="item-box">
+    <view class="user-box">
+      <image class="suer-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-info">
+        <text>{{userInfo.nickName}}</text>
+        <text>所在地：{{userInfo.city}}</text>
+      </view>
+    </view>
+  </view>
+  <!--缓存清理区域-->
+  <view class="item-box">
+    <view class="detail-item" catchtap="clearCatch">
+      <view class="datail-item-left">
+        <image src="/images/icon/wx_app_clear.png"></image>
+        <text>缓存清理</text>
+      </view>
+      <view class="datail-item-right">
+        <image src="/images/icon/wx_app_arrow_right.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!--设置面板区域-->
+  <view class="item-box">
+    <block wx:for="{{device}}">
+      <view class="detail-item" catchtap="{{item.tap}}"> 
+        <view class="datail-item-left">
+        <image src="{{item.iconur}}"></image>
+        <text>{{item.title}}</text>
+      </view>
+      <view class="datail-item-right">
+          <image src="/images/icon/wx_app_arrow_right.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!--退出登录-->
+  <view class="item-box">
+    <view class="login-out" catchtap="loginOut">退出登录</view>
+
+  </view>
+</view>

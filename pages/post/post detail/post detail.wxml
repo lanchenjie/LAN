@@ -1,0 +1,31 @@
+<!--pages/post/post detail/post detail.wxml-->
+
+
+<view class="container">
+  <image class="head-image" mode="aspectFill" src="{{postImg}}"></image>
+  <text class="title">{{title}}</text>
+  <view class="author-date">
+    <view class="author-container">
+      <image class="avatar" src="{{avatar}}"></image>
+      <text>{{author}}</text>
+    </view>
+    <text class="date">{{dateTime}}</text>
+  </view>
+  <text class="detail">{{detail}}</text>
+  <view class="tool">
+    <view class="tool-item" catchtap="onTapLike">
+      <image wx:if="{{upStatus}}" src="/images/icon/wx_app_liked.png"></image>
+      <image wx:else src="/images/icon/wx_app_like.png"></image>
+      <text>{{upNum}}</text>
+    </view>
+    <view class="tool-item comment" catchtap="onTapComment" data-id="{{postId}}">
+      <image src="/images/icon/wx_app_message.png"></image>
+      <text>{{commentNum}}</text>
+    </view>
+    <view class="tool-item" catchtap="onTapCollect">
+      <image wx:if="{{collectionStatus}}" src="/images/icon/wx_app_collected.png"></image>
+      <image wx:else src="/images/icon/wx_app_collect.png"></image>
+      <text>{{collectionNum}}</text>
+  </view>
+</view>
+</view>

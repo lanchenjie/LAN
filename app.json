@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/post/post",
+    "pages/post/post detail/post detail",
+    "pages/post/post-comment/post-comment",
+    "pages/movie/movie",
+    "pages/setting/setting",
+    "pages/web",
+    "pages/web/web"
+
+
+
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/post/post",
+        "iconPath": "/images/icon/shouye.jpg",
+        "selectedIconPath": "/images/icon/shouye1.jpg",
+        "text": "吧台"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "iconPath": "/images/icon/wx_app_movie.png",
+        "selectedIconPath": "/images/icon/wx_app_movie@HL.png",
+        "text": "咨讯"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "iconPath": "/images/icon/setting.jpg",
+        "selectedIconPath": "/images/icon/setting1.jpg",
+        "text": "个人中心"
+      }
+      
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#4A6141"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}
